@@ -1,4 +1,4 @@
-package com.robert.chapter03;
+package com.robert.chapter03.clip;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,6 +8,8 @@ import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.robert.chapter03.R;
 
 /**
  * @author: robert
