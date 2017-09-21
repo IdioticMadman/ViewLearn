@@ -1,2 +1,2 @@
 //include ':app'
-include ':chapter03', ':chapter04'
+include ':chapter03', ':chapter04', ':chapter05'
