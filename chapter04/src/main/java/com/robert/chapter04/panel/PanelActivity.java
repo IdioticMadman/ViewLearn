@@ -1,7 +1,12 @@
 package com.robert.chapter04.panel;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -75,6 +80,16 @@ public class PanelActivity extends AppCompatActivity implements View.OnClickList
             case R.id.cancel:
                 mImageView.reDo();
                 break;
+            case R.id.save:
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED) {
+                        requestPermissions(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 10);
+                    } else {
+                        mImageView.save();
+                    }
+                }
+                break;
             case R.id.line:
                 mImageView.setShapeDrawer(ImageView.DrawerType.LINE_DRAWER);
                 break;
@@ -88,4 +103,13 @@ public class PanelActivity extends AppCompatActivity implements View.OnClickList
         return true;
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 10) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                mImageView.save();
+            }
+        }
+    }
 }

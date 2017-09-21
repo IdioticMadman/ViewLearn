@@ -1,7 +1,11 @@
 package com.robert.chapter04.panel;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.net.Uri;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -11,6 +15,11 @@ import com.robert.chapter04.panel.drawer.LineDrawer;
 import com.robert.chapter04.panel.drawer.OvalDrawer;
 import com.robert.chapter04.panel.drawer.RectDrawer;
 import com.robert.chapter04.panel.drawer.ShapeDrawer;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 /**
  * @author: robert
@@ -24,7 +33,26 @@ public class ImageView extends View {
     private RectDrawer mRectDrawer;
     private OvalDrawer mOvalDrawer;
 
-
+    public void save() {
+        Bitmap bitmap = BitmapBuffer.getInstance().getBitmap();
+        FileOutputStream fileOutputStream = null;
+        try {
+            File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM), System.currentTimeMillis() + ".png");
+            fileOutputStream = new FileOutputStream(file);
+            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, fileOutputStream);
+            getContext().sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(file)));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }finally {
+            if (fileOutputStream!=null){
+                try {
+                    fileOutputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
     public enum DrawerType {
         LINE_DRAWER(0),
