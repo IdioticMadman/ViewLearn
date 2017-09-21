@@ -19,6 +19,8 @@
         <activity android:name=".line.LineActivity"/>
         <activity android:name=".rect.RectActivity">
         </activity>
+        <activity android:name=".panel.PanelActivity">
+        </activity>
     </application>
 
 </manifest>

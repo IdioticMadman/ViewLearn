@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 import com.robert.chapter04.line.LineActivity;
+import com.robert.chapter04.panel.PanelActivity;
 import com.robert.chapter04.rect.RectActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,4 +28,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(this, RectActivity.class));
     }
 
+    public void drawPanel(View view) {
+        startActivity(new Intent(this, PanelActivity.class));
+    }
 }

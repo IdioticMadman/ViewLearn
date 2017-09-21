@@ -24,5 +24,14 @@
         android:textAllCaps="false"
         app:layout_constraintTop_toBottomOf="@id/line_view1"/>
 
+    <Button
+        android:id="@+id/line_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="drawPanel"
+        android:text="drawPanel"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/line_view2"/>
+
 
 </android.support.constraint.ConstraintLayout>

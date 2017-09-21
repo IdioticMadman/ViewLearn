@@ -15,7 +15,7 @@ public class LineActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_line);
-        mFrameLayout = findViewById(R.id.container);
+        mFrameLayout = (FrameLayout) findViewById(R.id.container);
     }
 
     public void line(View view) {

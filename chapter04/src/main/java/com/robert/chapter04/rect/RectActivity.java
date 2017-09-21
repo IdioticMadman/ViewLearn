@@ -15,7 +15,7 @@ public class RectActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rect);
-        mFrameLayout = findViewById(R.id.container);
+        mFrameLayout = (FrameLayout) findViewById(R.id.container);
     }
 
     public void rect1(View view) {
