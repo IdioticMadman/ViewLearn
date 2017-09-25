@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/clear"
+        android:title="清除"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/cancel"
+        android:title="撤销"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/save"
+        android:title="保存"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/line"
+        android:title="line"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/rect"
+        android:title="rect"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/oval"
+        android:title="oval"
+        app:showAsAction="never"/>
+
+</menu>
