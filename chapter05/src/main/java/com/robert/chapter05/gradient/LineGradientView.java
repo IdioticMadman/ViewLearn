@@ -17,22 +17,22 @@ import android.view.View;
  * @time: 10:28
  * @说明:
  */
-public class GradientView extends View {
+public class LineGradientView extends View {
 
     private static final int OFFSET = 120;
     Paint mPaint;
 
-    public GradientView(Context context) {
+    public LineGradientView(Context context) {
         super(context);
         init();
     }
 
-    public GradientView(Context context, @Nullable AttributeSet attrs) {
+    public LineGradientView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public GradientView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public LineGradientView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }

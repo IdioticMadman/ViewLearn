@@ -11,9 +11,9 @@
         android:id="@+id/btn_shader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="shaderView"
         android:text="shader view"
         android:textAllCaps="false"
-        android:onClick="shaderView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
@@ -21,10 +21,12 @@
         android:id="@+id/btn_gradient"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="gradientView"
         android:text="gradient view"
         android:textAllCaps="false"
-        android:onClick="gradientView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_shader"/>
 
+
+    <include layout="@layout/item"/>
 </android.support.constraint.ConstraintLayout>
