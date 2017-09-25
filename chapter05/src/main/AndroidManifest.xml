@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".shader.ShaderActivity"/>
+        <activity android:name=".gradient.GradientActivity"/>
     </application>
 
 </manifest>

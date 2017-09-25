@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import com.robert.chapter05.gradient.GradientActivity;
 import com.robert.chapter05.shader.ShaderActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,5 +18,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void shaderView(View view) {
         startActivity(new Intent(this, ShaderActivity.class));
+    }
+
+    public void gradientView(View view) {
+        startActivity(new Intent(this, GradientActivity.class));
     }
 }
