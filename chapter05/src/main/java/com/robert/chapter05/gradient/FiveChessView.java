@@ -4,6 +4,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.RadialGradient;
+import android.graphics.Shader;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -57,10 +59,22 @@ public class FiveChessView extends View {
         drawChess(canvas, 3, 5, ChessType.WHITE);
     }
 
+    /**
+     * 画棋子
+     *
+     * @param canvas
+     * @param x
+     * @param y
+     * @param chessType
+     */
     private void drawChess(Canvas canvas, int x, int y, ChessType chessType) {
         int colorOuter = chessType == ChessType.BLACK ? Color.BLACK : Color.GRAY;
         int colorInner = Color.WHITE;
-
+        RadialGradient rg = new RadialGradient(x * SIZE + OFFSET, y * SIZE + OFFSET, SIZE / 1.5f, colorInner, colorOuter, Shader.TileMode.CLAMP);
+        mPaint.setShader(rg);
+        this.setLayerType(View.LAYER_TYPE_SOFTWARE, mPaint);
+        mPaint.setShadowLayer(6, 4, 4, Color.parseColor("#AACCCCCC"));
+        canvas.drawCircle(x * SIZE, y * SIZE, SIZE / 2, mPaint);
     }
 
     /**
