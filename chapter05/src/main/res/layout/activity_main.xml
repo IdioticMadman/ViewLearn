@@ -26,7 +26,4 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_shader"/>
-
-
-    <include layout="@layout/item"/>
 </android.support.constraint.ConstraintLayout>

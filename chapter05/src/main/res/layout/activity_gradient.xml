@@ -31,21 +31,22 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@id/btn_radial"/>
 
-    <!--<FrameLayout-->
-        <!--android:id="@+id/container"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintLeft_toLeftOf="parent"-->
-        <!--app:layout_constraintRight_toRightOf="parent"-->
-        <!--app:layout_constraintTop_toBottomOf="@id/btn_line"/>-->
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv"
+    <Button
+        android:id="@+id/btn_sweep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sweep"
+        android:text="sweep"
+        android:textAllCaps="false"
+        app:layout_constraintLeft_toRightOf="@id/btn_five_chess"/>
+
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_line">
-    </android.support.v7.widget.RecyclerView>
+        app:layout_constraintTop_toBottomOf="@id/btn_line"/>
+
 </android.support.constraint.ConstraintLayout>
