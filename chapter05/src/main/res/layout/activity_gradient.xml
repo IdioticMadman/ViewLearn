@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,7 +12,9 @@
         android:layout_height="wrap_content"
         android:onClick="line"
         android:text="line"
-        android:textAllCaps="false"/>
+        android:textAllCaps="false"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp"/>
 
     <Button
         android:id="@+id/btn_radial"
@@ -20,7 +23,8 @@
         android:onClick="radial"
         android:text="radial"
         android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_line"/>
+        app:layout_constraintLeft_toRightOf="@+id/btn_line"
+        tools:layout_editor_absoluteY="0dp"/>
 
     <Button
         android:id="@+id/btn_five_chess"
@@ -29,7 +33,8 @@
         android:onClick="fiveChess"
         android:text="fiveChess"
         android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_radial"/>
+        app:layout_constraintLeft_toRightOf="@+id/btn_radial"
+        tools:layout_editor_absoluteY="0dp"/>
 
     <Button
         android:id="@+id/btn_sweep"
@@ -38,7 +43,8 @@
         android:onClick="sweep"
         android:text="sweep"
         android:textAllCaps="false"
-        app:layout_constraintLeft_toRightOf="@id/btn_five_chess"/>
+        app:layout_constraintLeft_toRightOf="@+id/btn_five_chess"
+        tools:layout_editor_absoluteY="0dp"/>
 
     <Button
         android:id="@+id/btn_sweep1"
@@ -47,15 +53,45 @@
         android:onClick="sweep1"
         android:text="sweep1"
         android:textAllCaps="false"
-        app:layout_constraintTop_toBottomOf="@id/btn_line"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_line"
+        tools:layout_editor_absoluteX="0dp"/>
 
+    <Button
+        android:id="@+id/btn_bitmap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="bitmap"
+        android:text="bitmap"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btn_line"
+        app:layout_constraintLeft_toRightOf="@+id/btn_sweep1"/>
+
+    <Button
+        android:id="@+id/btn_compose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="compose"
+        android:text="compose"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btn_line"
+        app:layout_constraintLeft_toRightOf="@+id/btn_bitmap"/>
+
+    <Button
+        android:id="@+id/btn_sweep2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sweep2"
+        android:text="sweep2"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@+id/btn_line"
+        app:layout_constraintLeft_toRightOf="@+id/btn_compose"/>
     <FrameLayout
         android:id="@+id/container"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_sweep1"/>
+        app:layout_constraintTop_toBottomOf="@+id/btn_sweep1"/>
 
 </android.support.constraint.ConstraintLayout>
