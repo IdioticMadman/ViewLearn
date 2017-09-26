@@ -45,4 +45,9 @@ public class GradientActivity extends AppCompatActivity {
         mFrameLayout.removeAllViews();
         mFrameLayout.addView(new SweepGradientView(this));
     }
+
+    public void sweep1(View view) {
+        mFrameLayout.removeAllViews();
+        mFrameLayout.addView(new SweepGradient2View(this));
+    }
 }

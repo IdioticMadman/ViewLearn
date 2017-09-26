@@ -40,6 +40,15 @@
         android:textAllCaps="false"
         app:layout_constraintLeft_toRightOf="@id/btn_five_chess"/>
 
+    <Button
+        android:id="@+id/btn_sweep1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="sweep1"
+        android:text="sweep1"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toBottomOf="@id/btn_line"/>
+
     <FrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
@@ -47,6 +56,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_line"/>
+        app:layout_constraintTop_toBottomOf="@id/btn_sweep1"/>
 
 </android.support.constraint.ConstraintLayout>
