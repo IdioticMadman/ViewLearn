@@ -54,13 +54,13 @@ public class PorterDufferView extends View {
         canvasSrc.drawRect(0, 0, 300, 300, p2);
 
         Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        canvasB3.saveLayer(150, 150, 450, 450, null, Canvas.ALL_SAVE_FLAG);
+        int layer = canvasB3.saveLayer(150, 150, 450, 450, null, Canvas.ALL_SAVE_FLAG);
         canvasB3.drawBitmap(dst, 0, 0, null);
 
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC));
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST));
         canvasB3.drawBitmap(src, 150, 150, paint);
         paint.setXfermode(null);
-        canvasB3.restore();
+        canvasB3.restoreToCount(layer);
     }
 
     @Override
